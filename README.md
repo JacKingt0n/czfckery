@@ -4,9 +4,9 @@ This project monitors the price difference between Binance's API spot price for 
 
 ## Project Structure
 
-- `fetch_binance_price.py`: Python script to fetch Binance API spot price.
+- `fetch_binance_price.py`: Python script to fetch Binance API spot price continuously.
 - `tradingview_script.pine`: TradingView Pine Script to compare prices and flag deviations.
-- `binance_spot_price.txt`: Output file where the Binance API spot price is stored.
+- `binance_spot_price_log.txt`: Log file where the Binance API spot prices are stored.
 - `README.md`: This documentation.
 
 ## Setup Instructions
@@ -14,8 +14,8 @@ This project monitors the price difference between Binance's API spot price for 
 ### 1. Run the Python Script
 
 1. Ensure you have Python installed.
-2. Run `fetch_binance_price.py` to fetch the current Binance API spot price.
-3. The price will be saved to `binance_spot_price.txt`.
+2. Run `fetch_binance_price.py` to continuously fetch and log the Binance API spot price.
+3. The prices will be saved to `binance_spot_price_log.txt`.
 
 ### 2. Use the TradingView Pine Script
 
