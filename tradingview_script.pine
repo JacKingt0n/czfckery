@@ -1,0 +1,21 @@
+//@version=5
+indicator("BTCUSDT Binance Spot vs Binance API Deviation", overlay=false)
+
+// Fetch Binance's BTCUSDT spot price from TradingView
+tv_spot_price = close
+
+// Manually input the Binance API spot price (automate with a webhook for real-time updates)
+binance_api_spot_price = input(0.0, "Binance API Spot Price", type=input.float)
+
+// Calculate deviation
+deviation = (tv_spot_price - binance_api_spot_price) / binance_api_spot_price * 100
+
+// Set a threshold for flagging
+threshold = 0.5
+
+// Plot deviation
+plot(deviation, color=color.blue, title="Deviation %")
+
+// Flag deviations that exceed the threshold
+flag = abs(deviation) > threshold
+plotshape(series=flag, location=location.absolute, color=color.red, size=size.small, title="Flag")
